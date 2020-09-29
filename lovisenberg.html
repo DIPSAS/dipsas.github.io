@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style> 
+
+            img{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                height: 40%;
+                width: 50%;
+                min-width: 400px;
+                padding-right: 10%;
+            }
+            html, body {
+                height: 100%;
+            }
+
+            html {
+                display: table;
+                margin: auto;
+            }
+
+            body {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+        </style>
+    </head>
+    <body style="background-color:whitesmoke;">
+        <div class="content">
+            <img src="images/DIPS_ArenaLogo.png" />
+            <h3 id="header" style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: #343434; font-size: 3vw; font-weight: normal">DIPS Arena er i produksjon med pakkeforløp på Lovisenberg om</h1>
+            <h3 id="demo" style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 3vw; font-weight:bold;">- dager - timer - minutter - sekunder</h2>
+        </div>
+        <script>
+            var countDownDate = new Date("Nov 1, 2020 12:00:00").getTime();
+            var func = function() {
+                var now = new Date().getTime();
+
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                var txt = "";
+                if(days > 0) txt += days + " dager ";
+                if(hours > 0) txt += hours + " timer ";
+                if(minutes > 0) txt += minutes + " minutter "
+                txt += seconds + " sekunder ";
+
+                document.getElementById("demo").innerHTML = txt;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("header").innerHTML = ""
+                    document.getElementById("demo").innerHTML = "DIPS Arena er i produksjon med pakkeforløp på Lovisenberg";
+                }
+            };
+            var x = setInterval(func, 1000);
+            func();
+        </script>
+    </body>
+</html>
