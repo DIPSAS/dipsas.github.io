@@ -12,6 +12,7 @@
                 margin-bottom: auto;
                 height: 40%;
                 width: 50%;
+                padding: 20px;
                 min-width: 400px;
                 padding-right: 10%;
             }
@@ -42,7 +43,7 @@
         <script>
             var Lovisenberg = new Date("Nov 1, 2020 12:00:00").getTime();
             var Bergen = new Date("Nov 16, 2020 12:00:00").getTime();
-            var func = function(n1, n2, time) {
+            var func = function(n1, n2, time, name) {
                 var now = new Date().getTime();
 
                 var distance = time - now;
@@ -63,13 +64,13 @@
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById(n2).innerHTML = ""
-                    document.getElementById(n1).innerHTML = "DIPS Arena er i produksjon med pakkeforløp på Lovisenberg";
+                    document.getElementById(n1).innerHTML = "DIPS Arena er i produksjon " +name;
                 }
             };
-            var x = setInterval(() => func("demo", "header", Lovisenberg), 1000);
+            var x = setInterval(() => func("demo", "header", Lovisenberg, "med pakkeforløp på Lovisenberg"), 1000);
             func("demo", "header", Lovisenberg);
 
-            var x2 = setInterval(() => func("demo2", "header2", Bergen), 1000);
+            var x2 = setInterval(() => func("demo2", "header2", Bergen, "med psykisk helse i Helse Bergen"), 1000);
             func("demo2", "header2", Bergen);
         </script>
     </body>
