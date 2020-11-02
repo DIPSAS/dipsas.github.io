@@ -34,11 +34,11 @@
     <body style="background-color:whitesmoke;">
         <div class="content">
             <img src="images/DIPS_ArenaLogo.png" />
-            <h3 id="header" style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: #343434; font-size: 3vw; font-weight: normal">DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin i Helse Bergen om</h1>
+            <h3 id="header" style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: #343434; font-size: 3vw; font-weight: normal">DIPS Arena er i produksjon på Longyearbyen sykehus om</h1>
             <h3 id="demo" style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 3vw; font-weight:bold;">- dager - timer - minutter - sekunder</h2>
         </div>
         <script>
-            var countDownDate = new Date("Nov 16, 2020 12:00:00").getTime();
+            var countDownDate = new Date("Nov 8, 2020 13:00:00").getTime();
             var func = function() {
                 var now = new Date().getTime();
 
@@ -60,7 +60,7 @@
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("header").innerHTML = ""
-                    document.getElementById("demo").innerHTML = "DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin i Helse Bergen";
+                    document.getElementById("demo").innerHTML = "DIPS Arena er i produksjon på Longyearbyen sykehus";
                 }
             };
             var x = setInterval(func, 1000);
