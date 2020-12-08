@@ -54,8 +54,12 @@
     <body style="background-color:whitesmoke;">
         <div class="content">
             <img src="images/DIPS_ArenaLogo.png" />
+            <h3 id="hford" class="head">DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin i Helse Førde</h1>
+            <h3 id="tford" class="time"></h2>
             <h3 id="hberg" class="head">DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin i Helse Fonna</h1>
             <h3 id="tberg" class="time"></h2>
+            <h3 id="hlovi" class="head">DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin ved Lovisenberg (LDS)</h1>
+            <h3 id="tlovi" class="time"></h2>
         </div>
         <script>
 
@@ -94,8 +98,13 @@
                 func("h"+letter, "t"+letter, time, fallback, x);
             }
 
-            var Fonna = new Date("Jan 26, 2021 12:00:00").getTime();
 
+            var Fonna = new Date("Jan 26, 2021 12:00:00").getTime();
+            var Ford = new Date("Jan 12, 2021 12:00:00").getTime();
+            var Lov = new Date("Feb 7, 2021 12:00:00").getTime();
+
+            setup("lovi", Lov);
+            setup("ford", Ford);
             setup("berg", Fonna);
         </script>
     </body>
