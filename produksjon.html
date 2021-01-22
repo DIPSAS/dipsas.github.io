@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <style> 
+        <style>
             img
             {
                 display: block;
@@ -16,18 +16,18 @@
                 min-width: 400px;
                 padding-right: 10%;
             }
-            html, body 
+            html, body
             {
                 height: 100%;
             }
 
-            html 
+            html
             {
                 display: table;
                 margin: auto;
             }
 
-            body 
+            body
             {
                 display: table-cell;
                 vertical-align: middle;
@@ -35,18 +35,18 @@
 
             .head
             {
-                text-align: center; 
+                text-align: center;
                 font-weight: bold;
-                font-family: Arial, Helvetica, sans-serif; 
-                color: #343434; font-size: 2vw; 
+                font-family: Arial, Helvetica, sans-serif;
+                color: #343434; font-size: 2vw;
             }
 
             .time
             {
-                text-align: center; 
+                text-align: center;
                 font-weight: normal;
-                font-family: Arial, Helvetica, sans-serif; 
-                color: #343434; font-size: 2vw; 
+                font-family: Arial, Helvetica, sans-serif;
+                color: #343434; font-size: 2vw;
             }
 
         </style>
@@ -54,16 +54,16 @@
     <body style="background-color:whitesmoke;">
         <div class="content">
             <img src="images/DIPS_ArenaLogo.png" />
-            <h3 id="hford" class="head">DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin i Helse Førde</h1>
-            <h3 id="tford" class="time"></h2>
-            <h3 id="hberg" class="head">DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin i Helse Fonna</h1>
-            <h3 id="tberg" class="time"></h2>
-            <h3 id="hlovi" class="head">DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin ved Lovisenberg (LDS)</h1>
-            <h3 id="tlovi" class="time"></h2>
+            <h3 id="hberg" class="head">DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin i Helse Fonna</h3>
+            <h3 id="tberg" class="time"></h3>
+            <h3 id="hlovi" class="head">DIPS Arena er i produksjon ved psykisk helsevern og rusmedisin ved Lovisenberg (LDS)</h3>
+            <h3 id="tlovi" class="time"></h3>
+            <h3 id="hhelg" class="head">DIPS Arena er i produksjon ved Helgelandssykehuset</h3>
+            <h3 id="thelg" class="time"></h3>
         </div>
         <script>
 
-            var func = function(n1, n2, time, onFinishedName, x) 
+            var func = function(n1, n2, time, onFinishedName, x)
             {
                 var now = new Date().getTime();
 
@@ -100,12 +100,12 @@
 
 
             var Fonna = new Date("Jan 26, 2021 12:00:00").getTime();
-            var Ford = new Date("Jan 12, 2021 12:00:00").getTime();
             var Lov = new Date("Feb 7, 2021 12:00:00").getTime();
+            var Helg = new Date("Mar 14, 2021 08:00:00").getTime();
 
             setup("lovi", Lov);
-            setup("ford", Ford);
             setup("berg", Fonna);
+            setup("helg", Helg);
         </script>
     </body>
 </html>
