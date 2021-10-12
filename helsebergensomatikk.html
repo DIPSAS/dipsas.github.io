@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    img
+    {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+      height: auto;
+      padding: 30px;
+      max-width: 32%;
+      padding-right: 10%;
+    }
+    html, body
+    {
+      height: 100%;
+    }
+
+    html
+    {
+      display: table;
+      margin: auto;
+    }
+
+    body
+    {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .head
+    {
+      text-align: center;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #343434; font-size: 4vw;
+    }
+
+    .time
+    {
+      text-align: center;
+      font-weight: normal;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #343434; font-size: 4vw;
+    }
+
+  </style>
+</head>
+<body style="background-color:whitesmoke;">
+<div class="content">
+  <img src="images/DIPS_ArenaLogo.png" />
+  <h3  id="hldssom" class="head">Oppstart DIPS Arena i somatikken</h3>
+  <h3 id="tldssom" class="time" ></h3>
+</div>
+<script>
+
+  var func = function(n1, n2, time, onFinishedName, x)
+  {
+    var now = new Date().getTime();
+
+    var distance = time - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    var txt = "";
+    if(days > 0) txt += days + " dager ";
+
+    if (distance < 0) {
+      if(x){
+        clearInterval(x);
+      }
+      document.getElementById(n2).innerHTML = ""
+      document.getElementById(n1).innerHTML = onFinishedName;
+    }else{
+      document.getElementById(n2).innerHTML = txt;
+      document.getElementById(n1).innerHTML = onFinishedName + " om";
+    }
+  };
+
+  var setup = function(letter, time){
+    var fallback = document.getElementById("h"+letter).innerHTML;
+    var x = setInterval(() => func("h"+letter, "t"+letter, time, fallback, x), 1000);
+    func("h"+letter, "t"+letter, time, fallback, x);
+  }
+
+  var Ldssom = new Date("March 7, 2022 00:00:00").getTime();
+
+  setup("ldssom", Ldssom);
+</script>
+</body>
+</html>
