@@ -53,8 +53,8 @@
 <body style="background-color:whitesmoke;">
 <div class="content">
   <img src="images/DIPS_ArenaLogo.png" />
-  <h3  id="hldssom" class="head">Oppstart DIPS Arena i somatikken</h3>
-  <h3 id="tldssom" class="time" ></h3>
+  <h3  id="hbsom" class="head">Oppstart DIPS Arena i somatikken</h3>
+  <h3 id="tbsom" class="time" ></h3>
 </div>
 <script>
 
@@ -83,13 +83,13 @@
 
   var setup = function(letter, time){
     var fallback = document.getElementById("h"+letter).innerHTML;
-    var x = setInterval(() => func("h"+letter, "t"+letter, time, fallback, x), 1000);
+    var x = setInterval(func, 1000, "h"+letter, "t"+letter, time, fallback, x);
     func("h"+letter, "t"+letter, time, fallback, x);
   }
 
-  var Ldssom = new Date("March 7, 2022 00:00:00").getTime();
+  var Bsom = new Date("March 7, 2022 00:00:00").getTime();
 
-  setup("ldssom", Ldssom);
+  setup("bsom", Bsom);
 </script>
 </body>
 </html>
