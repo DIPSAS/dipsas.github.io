@@ -91,7 +91,8 @@
                 clearInterval(x);
             }
             document.getElementById(n2).innerHTML = ""
-            document.getElementById(n1).innerHTML = onFinishedName;
+            var options = { year: 'numeric', month: 'long', day: 'numeric' }
+            document.getElementById(n1).innerHTML = onFinishedName + " " + new Date(time).toLocaleDateString("nb-NO", options);
         }else{
             document.getElementById(n2).innerHTML = txt;
             document.getElementById(n1).innerHTML = onFinishedName + " om";
