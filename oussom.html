@@ -1,0 +1,115 @@
+<head>
+    <meta charset="utf-8" />
+    <style>
+        img
+        {
+            display: inline-block;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .super-lege {
+            width: 10.2%;
+        }
+
+        .super-pleier {
+            padding-left: 3%;
+            padding-right: 5%;
+            width: 11%;
+        }
+
+        .dips-logo {
+            width: 45%;
+        }
+
+
+        html, body
+        {
+            height: 100%;
+        }
+
+        html
+        {
+            display: table;
+            margin: auto;
+        }
+
+        body
+        {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .head
+        {
+            text-align: center;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #343434; font-size: 4vw;
+        }
+
+        .time
+        {
+            text-align: center;
+            font-weight: normal;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #343434; font-size: 4vw;
+        }
+
+    </style>
+</head>
+<body style="background-color:whitesmoke;">
+<div class="content">
+    <div class="image-container">
+        <img class="super-lege" src="images/SuperLege.png" />
+        <img class="dips-logo" src="images/DIPS_ArenaLogo.png" />
+        <img class="super-pleier" src="images/SuperSykepleier.png" />
+    </div>
+    <h3 id="hhoussom" class="head">Innføres i somatikken</h3>
+    <h3 id="thoussom" class="time" ></h3>
+</div>
+<script>
+
+    var func = function(n1, n2, time, onFinishedName, x)
+    {
+        var now = new Date().getTime();
+
+        var distance = time - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        var txt = "";
+        if(days > 0) txt += days + " dager ";
+        if(hours > 0) txt += hours + " timer ";
+        if(minutes > 0) txt += minutes + " minutter "
+        txt += seconds + " sekunder ";
+
+        if (distance < 0) {
+            if(x){
+                clearInterval(x);
+            }
+            document.getElementById(n2).innerHTML = ""
+            document.getElementById(n1).innerHTML = onFinishedName;
+        }else{
+            document.getElementById(n2).innerHTML = txt;
+            document.getElementById(n1).innerHTML = onFinishedName + " om";
+        }
+    };
+
+    var setup = function(letter, time){
+        var fallback = document.getElementById("h"+letter).innerHTML;
+        var x = setInterval(func, 1000, "h"+letter, "t"+letter, time, fallback, x);
+        func("h"+letter, "t"+letter, time, fallback, x);
+    }
+
+    var Houssom= new Date("March 05, 2023 00:18:00").getTime();
+
+    setup("houssom", Houssom);
+</script>
+</body>
+</html>
