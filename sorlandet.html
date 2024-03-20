@@ -1,5 +1,6 @@
 <head>
     <meta charset="utf-8" />
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <style>
         img
         {
@@ -22,6 +23,7 @@
 
         .dips-logo {
             width: 45%;
+            margin-right: 5%;
         }
 
 
@@ -46,7 +48,7 @@
         {
             text-align: center;
             font-weight: bold;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Open Sans';
             color: #343434; font-size: 4vw;
         }
 
@@ -54,21 +56,19 @@
         {
             text-align: center;
             font-weight: normal;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Open Sans';
             color: #343434; font-size: 4vw;
         }
 
     </style>
 </head>
-<body style="background-color:whitesmoke;">
+<body style="background-color:#F8F8F8;">
 <div class="content">
     <div class="image-container">
-        <img class="super-lege" src="images/SuperLege.png" />
         <img class="dips-logo" src="images/DIPS_ArenaLogo.png" />
-        <img class="super-pleier" src="images/SuperSykepleier.png" />
     </div>
-    <h3  id="hsor" class="head">DIPS Arena tas i bruk ved Sørlandet sykehus</h3>
-    <h3 id="tsor" class="time" ></h3>
+    <h3 id="hhsthf" class="head">DIPS Arena tas i bruk ved Sørlandet sykehus</h3>
+    <h3 id="thsthf" class="time" ></h3>
 </div>
 <script>
 
@@ -107,9 +107,9 @@
         func("h"+letter, "t"+letter, time, fallback, x);
     }
 
-    var Sor = new Date("October 27, 2024 08:00:00").getTime();
+    var Hsthf= new Date("October 27, 2024 08:00:00").getTime();
 
-    setup("sor", Sor);
+    setup("hsthf", Hsthf);
 </script>
 </body>
 </html>
